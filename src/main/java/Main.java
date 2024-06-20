@@ -124,9 +124,9 @@ public class Main {
                     break;
                 case CONTINENT_FILTER:
                     menuForSwitchSorted();
-                    int choice = scanner.nextInt();
+                    String choiceRes = scanner.nextLine();
+                    int choice = Integer.parseInt(choiceRes);
                     switchSortedList(countryList,choice);
-                    scanner.nextLine();//clean the buffer
                     break;
                 case QUIT:
                     System.out.println("Exiting...");
@@ -144,19 +144,19 @@ public class Main {
             }
             switch (choice){
                 case 1:
-                    countryList.sort(new CompareCountryByName());
+                    countryList.sort(new Comparators.CompareCountryByName());
                     choice = 0;
                     break;
                 case 2:
-                    countryList.sort(new CompareCountryByPopulation());
+                    countryList.sort(new Comparators.CompareCountryByPopulation());
                     choice = 0;
                     break;
                 case 3:
-                    countryList.sort(new CompareCountryByGdpLevel());
+                    countryList.sort(new Comparators.CompareCountryByGdpLevel());
                     choice = 0;
                     break;
                 case 4:
-                    countryList.sort(new CompareCountryByMainland());
+                    countryList.sort(new Comparators.CompareCountryByMainland());
                     choice = 0;
                     break;
                 case 5:
@@ -199,15 +199,15 @@ public class Main {
             }
             switch (select){
                 case 1:
-                    countryList.sort(new CompareCountryByRatings.byEconomicRating());
+                    countryList.sort(new Comparators.CompareCountryByRatings.byEconomicRating());
                     select = 0;
                     break;
                 case 2:
-                    countryList.sort(new CompareCountryByRatings.byPopulationRating());
+                    countryList.sort(new Comparators.CompareCountryByRatings.byPopulationRating());
                     select = 0;
                     break;
                 case 3:
-                    countryList.sort(new CompareCountryByRatings.byContinentRating());
+                    countryList.sort(new Comparators.CompareCountryByRatings.byContinentRating());
                     select = 0;
                     break;
                 default:
